@@ -1,0 +1,2 @@
+- Операционная система:
+- Браузер (Firefox, Chrome, Edge, Opera, etc.):
