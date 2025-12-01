@@ -1,4 +1,6 @@
-/* || FONTS */
+/* ================== */
+/* ||     FONTS       */
+/* ================== */
 
 @font-face {
     font-family: "TikTok Sans";
@@ -22,14 +24,97 @@
     font-display: swap;
 }
 
-/* || TEXT */
+/* ================== */
+/* ||     TEXT        */
+/* ================== */
 
 :root {
     font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+
+    --focus-clr: rgba(71, 71, 126, 0.6);
+    --error-clr: red;
+    --success-clr: rgb(54, 216, 54);
+    --disabled-bg-clr: rgb(95, 95, 95);
+    --disabled-text-clr: rgb(65, 65, 65);
 }
 
 .section__title {
     font-family: "TikTok Sans", Arial, Helvetica, sans-serif;
     font-size: 6rem;
     font-weight: 900;
+}
+
+/* ================== */
+/* || INTERACTIVITY   */
+/* ================== */
+
+/* || Links */
+
+.navigation__link:hover {
+    cursor: pointer;
+}
+
+/* || Buttons */
+
+.button {
+    border: none;
+    background: none;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+/*
+:focus-visible
+apply styles only when focused by keyboard but NOT THE MOUSE
+*/
+.button:focus-visible {
+    border: 2px solid var(--focus-clr);
+}
+
+/* || Inputs */
+
+/* focus */
+.input:focus,
+.textarea:focus {
+    border: 2px solid var(--focus-clr);
+}
+
+/* required */
+*:required,
+*[aria-required="true"] {
+    position: relative;
+}
+
+*:required::after,
+*[aria-required="true"]::after {
+    content: "*";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: var(--error-clr);
+}
+
+/* invalid after interaction */
+*:user-invalid,
+*[aria-user-invalid="true"] {
+    border: 2px solid var(--error-clr);
+}
+
+/* valid after interaction*/
+*:user-valid,
+*[aria-user-valid="true"] {
+    border: 2px solid var(--success-clr);
+}
+
+/* disabled */
+*:disabled,
+*[aria-disabled="true"] {
+    cursor: not-allowed;
 }
