@@ -29,17 +29,40 @@
 /* ================== */
 
 :root {
-    font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+    --header-font-family: "TikTok Sans",
+        Arial,
+        Helvetica,
+        sans-serif;
+    --body-font-family: 'Nunito Sans',
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    --border-w2: 2px;
+
+    --m10: 10px;
+    --m15: 15px;
+
+    --pd-10: 10px;
+    --pd-15: 15px;
+
+    --gap-5: 5px;
+    --gap-10: 10px;
+    --gap-15: 15px;
+    --gap-20: 20px;
+    --gap-30: 30px;
 
     --focus-clr: rgba(71, 71, 126, 0.6);
     --error-clr: red;
     --success-clr: rgb(54, 216, 54);
     --disabled-bg-clr: rgb(95, 95, 95);
     --disabled-text-clr: rgb(65, 65, 65);
+
+    font-family: var(--body-font-family);
 }
 
 .section__title {
-    font-family: "TikTok Sans", Arial, Helvetica, sans-serif;
+    font-family: var(--header-font-family);
     font-size: 6rem;
     font-weight: 900;
 }
@@ -75,7 +98,7 @@
 apply styles only when focused by keyboard but NOT THE MOUSE
 */
 .button:focus-visible {
-    border: 2px solid var(--focus-clr);
+    border: var(--border-w-normal) solid var(--focus-clr);
 }
 
 /* || Inputs */
@@ -83,7 +106,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 /* focus */
 .input:focus,
 .textarea:focus {
-    border: 2px solid var(--focus-clr);
+    border: var(--border-w-normal) solid var(--focus-clr);
 }
 
 /* required */
@@ -104,13 +127,13 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 /* invalid after interaction */
 *:user-invalid,
 *[aria-user-invalid="true"] {
-    border: 2px solid var(--error-clr);
+    border: var(--border-w2) solid var(--error-clr);
 }
 
 /* valid after interaction*/
 *:user-valid,
 *[aria-user-valid="true"] {
-    border: 2px solid var(--success-clr);
+    border: var(--border-w2) solid var(--success-clr);
 }
 
 /* disabled */
