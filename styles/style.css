@@ -59,6 +59,7 @@
     --disabled-text-clr: rgb(65, 65, 65);
 
     font-family: var(--body-font-family);
+    scroll-behavior: smooth;
 }
 
 .section__title {
