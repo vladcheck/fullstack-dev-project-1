@@ -25,7 +25,7 @@
 }
 
 /* ================== */
-/* ||     TEXT        */
+/* ||    GENERAL      */
 /* ================== */
 
 :root {
@@ -64,8 +64,16 @@
 
 .section__title {
     font-family: var(--header-font-family);
-    font-size: 6rem;
-    font-weight: 900;
+    font-size: 2.5rem;
+}
+
+.button {
+    border: none;
+    background: none;
+}
+
+.button__icon {
+    width: 100%;
 }
 
 .cart-button {
@@ -73,8 +81,6 @@
     height: 48px;
     aspect-ratio: 1/1;
 }
-
-
 
 /* ================== */
 /* || INTERACTIVITY   */
@@ -87,15 +93,6 @@
 }
 
 /* || Buttons */
-
-.button {
-    border: none;
-    background: none;
-}
-
-.button__icon {
-    width: 100%;
-}
 
 .button:hover {
     transform: scale(1.05);
