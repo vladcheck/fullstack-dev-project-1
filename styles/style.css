@@ -132,8 +132,8 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 /* valid after interaction*/
-*:user-valid,
-*[aria-user-valid="true"] {
+*:user-valid:not(.button),
+*[aria-user-valid="true"]:not(.button) {
     border: var(--border-w2) solid var(--success-clr);
 }
 
