@@ -68,6 +68,14 @@
     font-weight: 900;
 }
 
+.cart-button {
+    width: 48px;
+    height: 48px;
+    aspect-ratio: 1/1;
+}
+
+
+
 /* ================== */
 /* || INTERACTIVITY   */
 /* ================== */
@@ -83,6 +91,10 @@
 .button {
     border: none;
     background: none;
+}
+
+.button__icon {
+    width: 100%;
 }
 
 .button:hover {
