@@ -162,21 +162,29 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 /* ================== */
 
 /* navbar */
+
 .nav__list {
+    padding: 10px;
     display: flex;
-    justify-content: center;
-    gap: 2rem;
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
+.nav__item {
+    width: max-content;
+}
+
 .nav__link {
+    width: 100%;
+    padding: 0.5rem 1rem;
     text-decoration: none;
     color: #333;
-    padding: 0.5rem 1rem;
     border-radius: 4px;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* sections */
@@ -190,9 +198,9 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
 .section__title {
     text-align: center;
-    text-wrap-mode: wrap;
 }
 
+/* #build-your-base */
 #build-your-base .section__cards {
     display: flex;
     justify-content: space-around;
@@ -214,4 +222,45 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 #build-your-base .card__text {
     text-align: center;
     font-size: 0.8rem;
+}
+
+/* #products */
+#products .section__cards {
+    margin: 0 100px;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: start;
+    justify-items: center;
+    align-items: center;
+    column-gap: 20px;
+    row-gap: 30px;
+}
+
+.product__card {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    padding: 10px;
+}
+
+.product__title {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.product__image {
+    width: clamp(200px, 100%, 300px);
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.1rem;
+}
+
+.price::after {
+    content: "$";
+    display: inline-block;
+    margin-left: 2px;
 }
