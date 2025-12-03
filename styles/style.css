@@ -1,30 +1,4 @@
 /* ================== */
-/* ||     FONTS       */
-/* ================== */
-
-@font-face {
-    font-family: "TikTok Sans";
-    src: url("../assets/fonts/TikTok_Sans/TikTokSans-VariableFont.ttf") format("truetype-variations");
-    font-style: normal;
-    font-weight: 500 900;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Nunito Sans";
-    src: url("../assets/fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC.ttf") format("truetype-variations");
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Nunito Sans Italic";
-    src: url("../assets/fonts/Nunito_Sans/NunitoSans-Italic-VariableFont_YTLC.ttf") format("truetype-variations");
-    font-style: italic;
-    font-display: swap;
-}
-
-/* ================== */
 /* ||    GENERAL      */
 /* ================== */
 
@@ -61,14 +35,17 @@
     --disabled-bg-clr: rgb(95, 95, 95);
     --disabled-text-clr: rgb(65, 65, 65);
 
+    --text-primary-clr: black;
+    --text-secondary-clr: hsl(0, 0%, 70%);
+
+    --section-bg-primary-clr: white;
+    --section-bg-secondary-clr: hsl(218, 29%, 95%);
+
     font-family: var(--body-font-family);
     scroll-behavior: smooth;
 }
 
-.section__title {
-    font-family: var(--header-font-family);
-    font-size: 2.5rem;
-}
+
 
 .button {
     border: none;
@@ -83,6 +60,16 @@
     width: 48px;
     height: 48px;
     aspect-ratio: 1/1;
+}
+
+.price {
+    font-size: 1.1rem;
+}
+
+.price::after {
+    content: "$";
+    display: inline-block;
+    margin-left: 2px;
 }
 
 /* ================== */
@@ -190,6 +177,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 /* sections */
 
 .section {
+    padding: 20px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -197,6 +185,8 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 .section__title {
+    font-family: var(--header-font-family);
+    font-size: 2.5rem;
     text-align: center;
 }
 
@@ -241,8 +231,9 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 .product__card {
     display: flex;
     flex-direction: column;
+    gap: 10px;
     max-width: 300px;
-    padding: 10px;
+    padding: 20px;
 }
 
 .product__title {
@@ -251,16 +242,6 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 .product__image {
-    width: clamp(200px, 100%, 300px);
-    margin-bottom: 10px;
-}
-
-.price {
-    font-size: 1.1rem;
-}
-
-.price::after {
-    content: "$";
-    display: inline-block;
-    margin-left: 2px;
+    margin: 0 auto;
+    width: clamp(100px, min(100%, 10vmax), 300px);
 }
