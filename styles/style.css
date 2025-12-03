@@ -28,6 +28,7 @@
 
     --button-hover-bg-clr: #f0f0f0;
     --button-hover-text-clr: #2c5530;
+    --button-accent-bg-clr: hsl(27, 55%, 51%);
 
     --focus-clr: rgba(71, 71, 126, 0.6);
     --error-clr: red;
@@ -36,7 +37,7 @@
     --disabled-text-clr: rgb(65, 65, 65);
 
     --text-primary-clr: black;
-    --text-secondary-clr: hsl(0, 0%, 70%);
+    --text-secondary-clr: hsl(0, 0%, 37%);
 
     --section-bg-primary-clr: white;
     --section-bg-secondary-clr: hsl(218, 29%, 95%);
@@ -244,4 +245,83 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 .product__image {
     margin: 0 auto;
     width: clamp(100px, min(100%, 10vmax), 300px);
+}
+
+/* #giftsets */
+#giftsets {
+    background-color: var(--section-bg-secondary-clr);
+}
+
+#giftsets .section__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 20px;
+}
+
+.giftset {
+    width: 60vmin;
+    display: flex;
+    align-items: center;
+    background-color: var(--section-bg-primary-clr);
+}
+
+.giftset .selector {
+    display: flex;
+    flex-direction: column;
+}
+
+.giftset .selector__item {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-secondary-clr);
+    width: 100px;
+    aspect-ratio: 1/1;
+}
+
+.giftset__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+.giftset__title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.giftset__properties {
+    display: flex;
+}
+
+.giftset__order-button {
+    font-size: 0.9rem;
+    color: white;
+    background-color: var(--button-accent-bg-clr);
+    padding: 8px 40px;
+    border-radius: 10px;
+}
+
+.giftset__actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.property {
+    padding: 10px;
+    display: flex;
+}
+
+.property__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.property__title {
+    font-size: 0.8rem;
+    color: var(--text-secondary-clr);
 }
