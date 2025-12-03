@@ -325,3 +325,23 @@ apply styles only when focused by keyboard but NOT THE MOUSE
     font-size: 0.8rem;
     color: var(--text-secondary-clr);
 }
+
+/* #combos */
+#combos .selector {
+    width: min(100%, 1500px);
+    display: flex;
+    justify-content: space-around;
+}
+
+#combos .selector__item {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.combo__title {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
