@@ -52,6 +52,9 @@
     --gap-20: 20px;
     --gap-30: 30px;
 
+    --button-hover-bg-clr: #f0f0f0;
+    --button-hover-text-clr: #2c5530;
+
     --focus-clr: rgba(71, 71, 126, 0.6);
     --error-clr: red;
     --success-clr: rgb(54, 216, 54);
@@ -88,8 +91,10 @@
 
 /* || Links */
 
-.navigation__link:hover {
+.nav__link:hover {
     cursor: pointer;
+    background-color: var(--button-hover-bg-clr);
+    color: var(--button-hover-text-clr);
 }
 
 /* || Buttons */
@@ -150,4 +155,63 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 *:disabled,
 *[aria-disabled="true"] {
     cursor: not-allowed;
+}
+
+/* ================== */
+/* ||    LAYOUT       */
+/* ================== */
+
+/* navbar */
+.nav__list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* sections */
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section__title {
+    text-align: center;
+    text-wrap-mode: wrap;
+}
+
+#build-your-base .section__cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#build-your-base .card {
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#build-your-base .card__image {
+    width: 64px;
+}
+
+#build-your-base .card__text {
+    text-align: center;
+    font-size: 0.8rem;
 }
