@@ -63,6 +63,14 @@
     aspect-ratio: 1/1;
 }
 
+.order-button {
+    font-size: 0.9rem;
+    color: white;
+    background-color: var(--button-accent-bg-clr);
+    padding: 8px 40px;
+    border-radius: 10px;
+}
+
 .price {
     font-size: 1.1rem;
 }
@@ -183,6 +191,12 @@ apply styles only when focused by keyboard but NOT THE MOUSE
     font-size: 1.3rem;
     text-transform: capitalize;
     text-align: center;
+}
+
+/* cards */
+.card__actions {
+    display: flex;
+    justify-content: space-around;
 }
 
 /* #hero */
@@ -319,35 +333,58 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 /* #products */
+#products {
+    background-image: url("/img/secondary-color-background.png");
+    background-size: 20vw 100%;
+    background-repeat: no-repeat;
+}
+
 #products .section__cards {
     margin: 0 100px;
-    width: 100%;
+    width: 80%;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    justify-content: start;
-    justify-items: center;
-    align-items: center;
-    column-gap: 20px;
-    row-gap: 30px;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    grid-template-rows: 300px 300px;
+    row-gap: 40px;
+    column-gap: 30px;
 }
 
 .product__card {
+    background-color: white;
+    color: var(--secondary-clr);
+    box-shadow: 3px 3px 3px rgba(138, 138, 138, 0.2);
+    display: flex;
+    gap: 10px;
+}
+
+.product__content {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    max-width: 300px;
-    padding: 20px;
+    justify-content: space-between;
+    padding: 40px;
 }
 
 .product__title {
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.product__price {
+    color: var(--button-accent-bg-clr);
     font-size: 1.4rem;
     margin: 0;
 }
 
 .product__image {
     margin: 0 auto;
-    width: clamp(100px, min(100%, 10vmax), 300px);
+    height: 100%;
+}
+
+.product__card .card__actions {
+    justify-content: space-between;
 }
 
 /* #giftsets */
@@ -430,6 +467,13 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 /* #combos */
+#combos {
+    background-image: url("/img/secondary-color-background.png");
+    background-repeat: no-repeat;
+    background-size: 20vw 100%;
+    background-position: right center;
+}
+
 #combos .selector {
     width: min(100%, 1500px);
     display: flex;
@@ -437,6 +481,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 #combos .selector__item {
+    background-color: white;
     max-width: 400px;
     display: flex;
     flex-direction: column;
