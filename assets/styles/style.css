@@ -53,6 +53,7 @@
 .button {
     border: none;
     background: none;
+    transition: all ease-in-out 500ms;
 }
 
 .button__icon {
@@ -101,13 +102,12 @@
 
 /* || Buttons */
 
-.button:hover {
-    transform: scale(1.05);
-    cursor: pointer;
+.learn-more-button {
+    padding: 5px 25px;
 }
 
-.button:active {
-    transform: scale(0.98);
+.button:hover {
+    cursor: pointer;
 }
 
 /*
@@ -401,36 +401,52 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 #giftsets .section__container {
     display: flex;
     justify-content: center;
-    align-items: center;
     padding: 10px;
     margin: 20px;
 }
 
 .giftset {
-    width: 60vmin;
+    padding: 60px 30px;
+    width: min(60vw, 1200px);
     display: flex;
+    justify-content: space-between;
     align-items: center;
     background-color: var(--section-bg-primary-1-clr);
 }
 
-.giftset .selector {
+.giftset__image {
+    box-shadow: 0 10px 5px rgb(167, 167, 167, 0.3);
+}
+
+#giftsets .selector {
     display: flex;
     flex-direction: column;
 }
 
-.giftset .selector__item {
+#giftsets .selector__item,
+#giftsets .selector__item--active {
+    flex: 1;
     font-size: 2rem;
     font-weight: bold;
-    color: var(--text-inactive-clr);
     width: 100px;
-    aspect-ratio: 1/1;
+}
+
+#giftsets .selector__item {
+    background: none;
+    box-shadow: 2px 2px 5px inset rgba(129, 129, 129, 0.2);
+}
+
+#giftsets .selector__item--active {
+    color: var(--text-inactive-clr);
+    background: white;
 }
 
 .giftset__content {
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 20px;
+    padding: 30px;
 }
 
 .giftset__title {
@@ -440,9 +456,10 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
 .giftset__properties {
     display: flex;
+    justify-content: space-between;
 }
 
-.giftset__order-button {
+.giftsett__content .order-button {
     font-size: 0.9rem;
     color: white;
     background-color: var(--button-accent-bg-clr);
@@ -450,9 +467,8 @@ apply styles only when focused by keyboard but NOT THE MOUSE
     border-radius: 10px;
 }
 
-.giftset__actions {
-    display: flex;
-    justify-content: space-around;
+.giftset__content .card__actions {
+    justify-content: space-between;
 }
 
 .property {
