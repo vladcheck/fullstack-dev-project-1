@@ -44,6 +44,8 @@
     --section-bg-primary-2-clr: hsl(218, 29%, 95%);
     --secondary-clr: hsl(215, 23%, 33%);
 
+    --card-shadow: 0 0 15px rgba(194, 194, 194, 0.4);
+
     font-family: var(--body-font-family);
     scroll-behavior: smooth;
 }
@@ -72,7 +74,11 @@
 }
 
 .price {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+}
+
+.price-container {
+    display: flex;
 }
 
 .price::after {
@@ -353,7 +359,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 .product__card {
     background-color: white;
     color: var(--secondary-clr);
-    box-shadow: 3px 3px 3px rgba(138, 138, 138, 0.2);
+    box-shadow: var(--card-shadow);
     display: flex;
     gap: 10px;
 }
@@ -475,27 +481,48 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 #combos .selector {
-    width: min(100%, 1500px);
+    width: min(80%, 1500px);
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 30px;
 }
 
-#combos .selector__item {
+.combo {
+    flex: 1;
+    max-width: 350px;
     background-color: white;
-    max-width: 400px;
+    color: var(--secondary-clr);
+    padding: 30px;
+    box-shadow: var(--card-shadow);
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .combo__title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: bold;
+}
+
+.combo .price-container {
+    gap: 10px;
+}
+
+.combo__price {
+    color: var(--button-accent-bg-clr);
+}
+
+.combo__price--old {
+    font-size: 0.9em;
+    color: var(--text-inactive-clr);
+    text-decoration: line-through;
 }
 
 /* #footer */
 #footer {
+    color: var(--secondary-clr);
     display: flex;
     justify-content: center;
     align-items: center;
