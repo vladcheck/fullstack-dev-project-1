@@ -36,17 +36,17 @@
     --disabled-bg-clr: rgb(95, 95, 95);
     --disabled-text-clr: rgb(65, 65, 65);
 
-    --text-primary-clr: black;
-    --text-secondary-clr: hsl(0, 0%, 37%);
+    --text-black-clr: black;
+    --text-inactive-clr: hsl(0, 0%, 37%);
+    --text-white-clr: white;
 
-    --section-bg-primary-clr: white;
-    --section-bg-secondary-clr: hsl(218, 29%, 95%);
+    --section-bg-primary-1-clr: white;
+    --section-bg-primary-2-clr: hsl(218, 29%, 95%);
+    --secondary-clr: hsl(215, 23%, 33%);
 
     font-family: var(--body-font-family);
     scroll-behavior: smooth;
 }
-
-
 
 .button {
     border: none;
@@ -160,9 +160,28 @@ apply styles only when focused by keyboard but NOT THE MOUSE
     gap: 40px;
 }
 
+.section__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
 .section__title {
+    color: var(--secondary-clr);
     font-family: var(--header-font-family);
     font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.section__subtitle {
+    color: var(--secondary-clr);
+    font-family: var(--header-font-family);
+    font-size: 1.3rem;
+    text-transform: capitalize;
     text-align: center;
 }
 
@@ -191,6 +210,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 .hero__title {
+    color: var(--secondary-clr);
     text-transform: uppercase;
     font-size: 6.5rem;
     font-weight: 900;
@@ -216,6 +236,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 .sidebar {
+    background: var(--secondary-clr);
     height: 100%;
     width: min(500px, 20vw);
     display: flex;
@@ -236,11 +257,11 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 .nav__link {
+    color: var(--text-white-clr);
     font-size: 1.5rem;
     width: 100%;
     padding: 0.5rem 1rem;
     text-decoration: none;
-    color: #333;
     border-radius: 4px;
     transition: background 0.3s ease, color 0.3s ease;
 }
@@ -311,7 +332,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
 /* #giftsets */
 #giftsets {
-    background-color: var(--section-bg-secondary-clr);
+    background-color: var(--section-bg-primary-2-clr);
 }
 
 #giftsets .section__container {
@@ -326,7 +347,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
     width: 60vmin;
     display: flex;
     align-items: center;
-    background-color: var(--section-bg-primary-clr);
+    background-color: var(--section-bg-primary-1-clr);
 }
 
 .giftset .selector {
@@ -337,7 +358,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 .giftset .selector__item {
     font-size: 2rem;
     font-weight: bold;
-    color: var(--text-secondary-clr);
+    color: var(--text-inactive-clr);
     width: 100px;
     aspect-ratio: 1/1;
 }
@@ -385,7 +406,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
 .property__title {
     font-size: 0.8rem;
-    color: var(--text-secondary-clr);
+    color: var(--text-inactive-clr);
 }
 
 /* #combos */
@@ -414,5 +435,5 @@ apply styles only when focused by keyboard but NOT THE MOUSE
     justify-content: center;
     align-items: center;
     padding: 20px 0;
-    background-color: var(--section-bg-secondary-clr);
+    background-color: var(--section-bg-primary-2-clr);
 }
