@@ -54,8 +54,6 @@
     display: none;
 }
 
-
-
 .price {
     font-size: 1.2rem;
 }
@@ -94,18 +92,13 @@
 }
 
 .button__icon {
-    width: 100%;
+    --size: 48px;
+    width: var(--size);
+    aspect-ratio: 1/1;
 }
 
 .learn-more-button {
     background-color: var(--section-bg-primary-2-clr);
-}
-
-.cart-button {
-    --size: 48px;
-    width: var(--size);
-    height: var(--size);
-    aspect-ratio: 1/1;
 }
 
 .order-button {
