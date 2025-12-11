@@ -117,7 +117,8 @@ section {
 }
 
 body {
-    line-height: 1;
+    /* edited */
+    line-height: 1.4;
 }
 
 ol,
