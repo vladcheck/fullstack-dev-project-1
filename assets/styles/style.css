@@ -250,6 +250,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 .hero__title .accent {
+    display: block;
     font-size: 7rem;
     color: white;
     background-color: var(--button-accent-bg-clr);
