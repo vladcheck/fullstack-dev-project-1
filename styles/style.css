@@ -50,10 +50,6 @@
     scroll-behavior: smooth;
 }
 
-.phone-navbar {
-    display: none;
-}
-
 .price {
     font-size: 1.2rem;
 }
@@ -109,6 +105,18 @@
 
 .button:hover {
     cursor: pointer;
+}
+
+.sidebar__toggle-button {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    max-width: none;
+    width: 100vw;
+    background-color: var(--secondary-clr);
+    border-radius: 0;
 }
 
 /*
@@ -267,13 +275,14 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
 /* sidebar */
 .sidebar {
+    position: static;
     background: var(--secondary-clr);
     height: 100%;
     width: clamp(300px, 20vw, 500px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 40px;
+    padding: 40px;
 }
 
 .sidebar__content {

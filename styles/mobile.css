@@ -1,5 +1,5 @@
 /* tablets */
-@media (max-width: 1050px) {
+@media (max-width: 1400px) {
 
     /* hero */
     .hero__title {
@@ -31,27 +31,35 @@
         font-size: 20px;
     }
 
-    body {
-        /* for sticky navbar */
-        position: relative;
-    }
-
-    .phone-navbar {
-        z-index: 9999;
-        width: 100vw;
-        display: block;
-        position: sticky;
-        top: 0;
-        padding: 10px;
-        background-color: var(--secondary-clr);
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
     .section {
         padding: 40px 15px;
+    }
+
+    /* || navigation */
+    .sidebar__toggle-button {
+        display: flex;
+    }
+
+    .sidebar {
+        position: fixed;
+        z-index: 9000;
+        top: 0;
+        right: -100%;
+        width: min(60vw, 400px);
+        height: 100vh;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        transition: right 0.4s ease;
+        overflow-y: auto;
+    }
+
+    .sidebar.active {
+        display: block;
+        right: 0;
+    }
+
+    .sidebar .nav__link {
+        font-size: 1rem;
     }
 
     /* || buttons */
@@ -95,11 +103,6 @@
         background-color: transparent;
         color: inherit;
         font-size: inherit;
-    }
-
-    /* || navigation */
-    .sidebar {
-        display: none;
     }
 
     /* || build-your-base */
