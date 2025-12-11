@@ -209,8 +209,8 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
 /* #hero */
 #hero {
-    --bg-offset: 600px;
-    --left-margin: 200px;
+    --bg-offset: min(40vw, 500px);
+    --left-margin: min(5vw, 200px);
     background: url("../img/banner.png") no-repeat;
     background-size: cover;
     background-position: var(--bg-offset) center;
@@ -268,7 +268,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 .sidebar {
     background: var(--secondary-clr);
     height: 100%;
-    width: min(500px, 20vw);
+    width: clamp(300px, 20vw, 500px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -294,9 +294,9 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 .nav__link {
+    text-wrap-mode: nowrap;
     color: var(--text-white-clr);
     font-size: 1.5rem;
-    width: 100%;
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 4px;
@@ -311,14 +311,16 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 #build-your-base .section__cards {
-    max-width: 70vw;
+    width: min(70vw, 1400px);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: stretch;
-    gap: 30px
+    gap: 70px
 }
 
 #build-your-base .card {
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -339,7 +341,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 #build-your-base .card__text {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     text-align: center;
 }
 
@@ -412,14 +414,17 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
 .giftset {
     padding: 60px 30px;
-    width: min(60vw, 1000px);
+    width: min(85vw, 1000px);
+    background-color: var(--section-bg-primary-1-clr);
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--section-bg-primary-1-clr);
+    gap: 20px;
 }
 
 .giftset__image {
+    max-width: 50%;
     box-shadow: 0 10px 5px rgb(167, 167, 167, 0.3);
 }
 
@@ -510,14 +515,14 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 #combos .selector {
-    width: min(80%, 1500px);
+    width: min(1400px, 80vw);
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    align-items: center;
     gap: 30px;
 }
 
 .combo {
-    flex: 1;
     max-width: 350px;
     background-color: white;
     color: var(--secondary-clr);
@@ -560,7 +565,35 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 /* || ADAPTIVITY */
+
+/* tablets */
+@media (max-width: 1050px) {
+
+    /* hero */
+    .hero__title {
+        font-size: 4.4rem;
+    }
+
+    .hero__title .accent {
+        font-size: inherit;
+    }
+
+    /* build-your-base */
+    #build-your-base .card__title {
+        font-size: 2.5rem;
+    }
+
+    #build-your-base .card__text {
+        font-size: 1.5rem;
+    }
+}
+
+/* phones */
 @media (max-width: 700px) {
+    :root {
+        font-size: 20px;
+    }
+
     body {
         /* for sticky navbar */
         position: relative;
@@ -617,14 +650,14 @@ apply styles only when focused by keyboard but NOT THE MOUSE
     .hero__title {
         background-color: white;
         text-align: center;
-        font-size: 2rem;
+        font-size: 3rem;
         padding: 20px;
     }
 
     .hero__title .accent {
-        padding: 5px;
-        font-size: 1em;
-        margin: 10px 0;
+        background-color: transparent;
+        color: inherit;
+        font-size: inherit;
     }
 
     /* || navigation */
@@ -634,8 +667,10 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
     /* || build-your-base */
     #build-your-base .section__cards {
+        flex-wrap: nowrap;
         flex-direction: column;
-        gap: 50px;
+        justify-content: center;
+        align-items: center;
     }
 
     /* || products */
