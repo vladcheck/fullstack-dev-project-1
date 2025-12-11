@@ -83,6 +83,7 @@
 /* || Buttons */
 
 .button {
+    max-width: 150px;
     padding: 8px 20px;
     font-size: 1rem;
     border: none;
@@ -202,7 +203,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 /* cards */
 .card__actions {
     display: flex;
-    justify-content: space-around;
+    justify-content: start;
     gap: 10px;
 }
 
@@ -361,11 +362,14 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 .product__card {
+    padding: 20px;
     background-color: white;
     color: var(--secondary-clr);
     box-shadow: var(--card-shadow);
     display: flex;
-    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
 }
 
 .product__content {
@@ -373,7 +377,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 40px;
+    gap: 10px;
 }
 
 .product__title {
@@ -390,11 +394,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
 .product__image {
     margin: 0 auto;
-    height: 100%;
-}
-
-.product__card .card__actions {
-    justify-content: space-between;
+    height: 90%;
 }
 
 /* #giftsets */
@@ -447,24 +447,17 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 .giftset__content {
-    max-width: 500px;
+    max-width: 480px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 30px;
-}
-
-.giftset__properties {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    gap: 30px;
 }
 
 .giftset__column {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
 }
 
 .giftset__title {
@@ -484,10 +477,14 @@ apply styles only when focused by keyboard but NOT THE MOUSE
     justify-content: space-between;
 }
 
-.property {
-    padding: 10px;
+.giftset__properties {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
+}
+
+.property {
+    display: flex;
 }
 
 .property__column {
