@@ -518,7 +518,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 #combos .selector {
     width: min(1400px, 80vw);
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     gap: 30px;
 }
@@ -586,6 +586,11 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
     #build-your-base .card__text {
         font-size: 1.5rem;
+    }
+
+    /* combos */
+    #combos .selector {
+        justify-content: left;
     }
 }
 
