@@ -1,34 +1,7 @@
-/* tablets */
-@media (max-width: 1400px) {
-
-    /* hero */
-    .hero__title {
-        font-size: 4.4rem;
-    }
-
-    .hero__title .accent {
-        font-size: inherit;
-    }
-
-    /* build-your-base */
-    #build-your-base .card__title {
-        font-size: 2.5rem;
-    }
-
-    #build-your-base .card__text {
-        font-size: 1.5rem;
-    }
-
-    /* combos */
-    #combos .selector {
-        justify-content: left;
-    }
-}
-
 /* phones */
 @media (max-width: 700px) {
     :root {
-        font-size: 20px;
+        font-size: 17px;
     }
 
     .section {
@@ -59,7 +32,7 @@
     }
 
     .sidebar .nav__link {
-        font-size: 1rem;
+        font-size: 1.4rem;
     }
 
     /* || buttons */

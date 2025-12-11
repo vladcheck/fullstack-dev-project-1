@@ -253,13 +253,13 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 .hero__title {
     color: var(--secondary-clr);
     text-transform: uppercase;
-    font-size: 6.5rem;
+    font-size: min(7vw, 6.5rem);
     font-weight: 900;
 }
 
 .hero__title .accent {
     display: block;
-    font-size: 7rem;
+    font-size: min(7vw, 6.5rem);
     color: white;
     background-color: var(--button-accent-bg-clr);
     padding: 20px 30px;
@@ -572,4 +572,30 @@ apply styles only when focused by keyboard but NOT THE MOUSE
     align-items: center;
     padding: 20px 0;
     background-color: var(--section-bg-primary-2-clr);
+}
+
+@media (max-width: 1400px) {
+
+    /* hero */
+    .hero__title {
+        font-size: 7vw;
+    }
+
+    .hero__title .accent {
+        font-size: 7vw;
+    }
+
+    /* build-your-base */
+    #build-your-base .card__title {
+        font-size: 2.5rem;
+    }
+
+    #build-your-base .card__text {
+        font-size: 1.5rem;
+    }
+
+    /* combos */
+    #combos .selector {
+        justify-content: left;
+    }
 }
