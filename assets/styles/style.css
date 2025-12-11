@@ -411,7 +411,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
 .giftset {
     padding: 60px 30px;
-    width: min(60vw, 1200px);
+    width: min(60vw, 1000px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -429,6 +429,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
 #giftsets .selector__item,
 #giftsets .selector__item--active {
+    border-radius: 0;
     flex: 1;
     font-size: 2rem;
     font-weight: bold;
