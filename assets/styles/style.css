@@ -211,9 +211,12 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
 /* #hero */
 #hero {
-    background: url("/img/banner.png") top left no-repeat;
-    background-size: cover;
+    --bg-offset: 600px;
     --left-margin: 200px;
+    background: url("../img/banner.png") no-repeat;
+    background-size: cover;
+    background-position: var(--bg-offset) center;
+
     height: 100vh;
     gap: 0;
     display: flex;
@@ -249,7 +252,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 .hero__title .accent {
-    font-size: 7em;
+    font-size: 7rem;
     color: white;
     background-color: var(--button-accent-bg-clr);
     padding: 20px 30px;
@@ -344,7 +347,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
 /* #products */
 #products {
-    background-image: url("/img/secondary-color-background.png");
+    background-image: url("../img/secondary-color-background.png");
     background-size: 20vw 100%;
     background-repeat: no-repeat;
 }
@@ -494,7 +497,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
 /* #combos */
 #combos {
-    background-image: url("/img/secondary-color-background.png");
+    background-image: url("../img/secondary-color-background.png");
     background-repeat: no-repeat;
     background-size: 20vw 100%;
     background-position: right center;
@@ -582,6 +585,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
     /* || hero */
     #hero {
+        background-position: center center;
         width: 100vw;
     }
 
