@@ -46,8 +46,10 @@
 
     --card-shadow: 0 0 15px rgba(194, 194, 194, 0.4);
 
+    min-height: 100vh;
     font-family: var(--body-font-family);
     scroll-behavior: smooth;
+    overflow-y: scroll;
 }
 
 .price {
@@ -245,6 +247,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 .hero__content-block {
+    font-size: min(6vw, 6.5rem);
     position: absolute;
     left: var(--left-margin);
     bottom: 100px;
@@ -253,16 +256,14 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 .hero__title {
     color: var(--secondary-clr);
     text-transform: uppercase;
-    font-size: min(7vw, 6.5rem);
     font-weight: 900;
 }
 
 .hero__title .accent {
     display: block;
-    font-size: min(7vw, 6.5rem);
     color: white;
     background-color: var(--button-accent-bg-clr);
-    padding: 20px 30px;
+    padding: min(1vh, 30px) min(1vw, 20px);
 }
 
 .header {
@@ -525,6 +526,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 #combos .selector {
+    overflow: hidden;
     width: min(1400px, 80vw);
     display: flex;
     justify-content: center;
@@ -576,15 +578,6 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
 @media (max-width: 1400px) {
 
-    /* hero */
-    .hero__title {
-        font-size: 7vw;
-    }
-
-    .hero__title .accent {
-        font-size: 7vw;
-    }
-
     /* build-your-base */
     #build-your-base .card__title {
         font-size: 2.5rem;
@@ -592,6 +585,55 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
     #build-your-base .card__text {
         font-size: 1.5rem;
+    }
+
+    /* || giftsets */
+    #giftsets .section__container {
+
+        width: 90vw;
+        flex-direction: column-reverse;
+    }
+
+    #giftsets .section__container>* {
+        width: 100%;
+    }
+
+    #giftsets .selector {
+        flex-direction: row;
+    }
+
+    #giftsets .selector__item,
+    #giftsets .selector__item--active {
+        height: 120px;
+        max-width: none;
+        flex: 1;
+    }
+
+    #giftsets .selector__item:hover,
+    #giftsets .selector__item--active:hover {
+        cursor: pointer;
+    }
+
+    .giftset {
+        padding: 20px;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .giftset__content {
+        gap: 20px;
+        padding: 0;
+    }
+
+    .property {
+        padding: 0;
+    }
+
+    .property__icon {
+        --size: 54px;
+        aspect-ratio: 1/1;
+        width: var(--size);
+        height: var(--size);
     }
 
     /* combos */

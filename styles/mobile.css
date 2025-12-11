@@ -1,6 +1,7 @@
 /* phones */
 @media (max-width: 700px) {
     :root {
+        position: relative;
         font-size: 17px;
     }
 
@@ -18,12 +19,11 @@
         z-index: 9000;
         top: 0;
         right: -100%;
-        width: min(60vw, 400px);
+        width: min(80vw, 400px);
         height: 100vh;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
         padding: 30px;
         transition: right 0.4s ease;
-        overflow-y: auto;
     }
 
     .sidebar.active {
@@ -58,7 +58,8 @@
     }
 
     .hero__content-block {
-        position: initial;
+        position: static;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -68,14 +69,13 @@
     .hero__title {
         background-color: white;
         text-align: center;
-        font-size: 2rem;
-        padding: 20px;
+        font-size: min(10vw, 6rem);
+        padding: 40px 20px;
     }
 
     .hero__title .accent {
-        background-color: transparent;
-        color: inherit;
-        font-size: inherit;
+        padding: 5px 20px;
+        font-size: min(11vw, 6rem);
     }
 
     /* || build-your-base */
@@ -112,47 +112,6 @@
     .product__content {
         padding: 0;
         gap: 10px;
-    }
-
-    /* || giftsets */
-    #giftsets .section__container {
-
-        width: 90vw;
-        flex-direction: column-reverse;
-    }
-
-    #giftsets .section__container>* {
-        width: 100%;
-    }
-
-    #giftsets .selector {
-        flex-direction: row;
-    }
-
-    #giftsets .selector__item {
-        aspect-ratio: 1/1;
-    }
-
-    .giftset {
-        padding: 20px;
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .giftset__content {
-        gap: 20px;
-        padding: 0;
-    }
-
-    .property {
-        padding: 0;
-    }
-
-    .property__icon {
-        --size: 54px;
-        aspect-ratio: 1/1;
-        width: var(--size);
-        height: var(--size);
     }
 
     /* || combos */
