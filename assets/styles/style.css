@@ -656,7 +656,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
     .hero__title {
         background-color: white;
         text-align: center;
-        font-size: 3rem;
+        font-size: 2rem;
         padding: 20px;
     }
 
