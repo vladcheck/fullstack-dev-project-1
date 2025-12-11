@@ -121,6 +121,50 @@
     border-radius: 0;
 }
 
+/* 'scroll to top' button */
+.scroll-top {
+    --size: 64px;
+    --offset: 50px;
+
+    background: url("../assets/icons/double-chevron-48.png") no-repeat, white;
+    background-position: center center;
+    object-fit: fill;
+
+    overflow: clip;
+    position: fixed;
+    aspect-ratio: 1/1;
+    bottom: var(--offset);
+    right: var(--offset);
+    width: var(--size);
+    height: var(--size);
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background: #1e3a23;
+    transform: scale(1.1);
+}
+
+.scroll-top:active {
+    transform: scale(0.95);
+}
+
 /*
 :focus-visible
 apply styles only when focused by keyboard but NOT THE MOUSE
@@ -159,7 +203,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 /* valid after interaction*/
-*:user-valid:not(.button),
+*:user-valid:not(button),
 *[aria-user-valid="true"]:not(.button) {
     border: var(--border-w2) solid var(--success-clr);
 }
