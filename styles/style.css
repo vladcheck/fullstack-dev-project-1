@@ -157,7 +157,7 @@
 }
 
 .scroll-top:hover {
-    background: #1e3a23;
+    background: var(--button-accent-bg-clr);
     transform: scale(1.1);
 }
 
