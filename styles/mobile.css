@@ -1,0 +1,127 @@
+/* phones */
+@media (max-width: 700px) {
+    :root {
+        position: relative;
+        font-size: 17px;
+    }
+
+    .section {
+        padding: 40px 15px;
+    }
+
+    /* || navigation */
+    .sidebar__toggle-button {
+        display: flex;
+    }
+
+    .sidebar {
+        position: fixed;
+        z-index: 9000;
+        top: 0;
+        right: -100%;
+        width: min(80vw, 400px);
+        height: 100vh;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        transition: right 0.4s ease;
+    }
+
+    .sidebar.active {
+        display: block;
+        right: 0;
+    }
+
+    .sidebar .nav__link {
+        font-size: 1.4rem;
+    }
+
+    /* || buttons */
+    .order-button {
+        text-wrap-mode: nowrap;
+    }
+
+    /* || hero */
+    #hero {
+        background-position: center center;
+        width: 100vw;
+    }
+
+    .hero__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .hero__content-block {
+        position: static;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero__title {
+        background-color: white;
+        text-align: center;
+        font-size: min(10vw, 6rem);
+        padding: 40px 20px;
+    }
+
+    .hero__title .accent {
+        padding: 5px 20px;
+        font-size: min(11vw, 6rem);
+    }
+
+    /* || build-your-base */
+    #build-your-base .section__cards {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* || products */
+    #products {
+        background-image: none;
+        background-color: var(--section-bg-primary-2-clr);
+    }
+
+    #products .section__cards {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .product__card {
+        padding: 20px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .product__image {
+        max-width: 50vw;
+    }
+
+    .product__content {
+        padding: 0;
+        gap: 10px;
+    }
+
+    /* || combos */
+    #combos {
+        background-image: none;
+    }
+
+    #combos .selector {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

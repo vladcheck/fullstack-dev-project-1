@@ -46,12 +46,10 @@
 
     --card-shadow: 0 0 15px rgba(194, 194, 194, 0.4);
 
+    min-height: 100vh;
     font-family: var(--body-font-family);
     scroll-behavior: smooth;
-}
-
-.phone-navbar {
-    display: none;
+    overflow-y: scroll;
 }
 
 .price {
@@ -111,6 +109,62 @@
     cursor: pointer;
 }
 
+.sidebar__toggle-button {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    max-width: none;
+    width: 100vw;
+    background-color: var(--secondary-clr);
+    border-radius: 0;
+}
+
+/* 'scroll to top' button */
+.scroll-top {
+    --size: 64px;
+    --offset: 50px;
+
+    background: url("../assets/icons/double-chevron-48.png") no-repeat, white;
+    background-position: center center;
+    object-fit: fill;
+
+    overflow: clip;
+    position: fixed;
+    aspect-ratio: 1/1;
+    bottom: var(--offset);
+    right: var(--offset);
+    width: var(--size);
+    height: var(--size);
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background: var(--button-accent-bg-clr);
+    transform: scale(1.1);
+}
+
+.scroll-top:active {
+    transform: scale(0.95);
+}
+
 /*
 :focus-visible
 apply styles only when focused by keyboard but NOT THE MOUSE
@@ -149,7 +203,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 /* valid after interaction*/
-*:user-valid:not(.button),
+*:user-valid:not(button),
 *[aria-user-valid="true"]:not(.button) {
     border: var(--border-w2) solid var(--success-clr);
 }
@@ -211,7 +265,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 #hero {
     --bg-offset: min(40vw, 500px);
     --left-margin: min(5vw, 200px);
-    background: url("../img/banner.png") no-repeat;
+    background: url("../assets/img/banner.png") no-repeat;
     background-size: cover;
     background-position: var(--bg-offset) center;
 
@@ -237,6 +291,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 }
 
 .hero__content-block {
+    font-size: min(6vw, 6.5rem);
     position: absolute;
     left: var(--left-margin);
     bottom: 100px;
@@ -245,16 +300,14 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 .hero__title {
     color: var(--secondary-clr);
     text-transform: uppercase;
-    font-size: 6.5rem;
     font-weight: 900;
 }
 
 .hero__title .accent {
     display: block;
-    font-size: 7rem;
     color: white;
     background-color: var(--button-accent-bg-clr);
-    padding: 20px 30px;
+    padding: min(1vh, 30px) min(1vw, 20px);
 }
 
 .header {
@@ -267,13 +320,14 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
 /* sidebar */
 .sidebar {
+    position: static;
     background: var(--secondary-clr);
     height: 100%;
     width: clamp(300px, 20vw, 500px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 40px;
+    padding: 40px;
 }
 
 .sidebar__content {
@@ -348,7 +402,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
 /* #products */
 #products {
-    background-image: url("../img/secondary-color-background.png");
+    background-image: url("../assets/img/secondary-color-background.png");
     background-size: 20vw 100%;
     background-repeat: no-repeat;
 }
@@ -509,13 +563,14 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
 /* #combos */
 #combos {
-    background-image: url("../img/secondary-color-background.png");
+    background-image: url("../assets/img/secondary-color-background.png");
     background-repeat: no-repeat;
     background-size: 20vw 100%;
     background-position: right center;
 }
 
 #combos .selector {
+    overflow: hidden;
     width: min(1400px, 80vw);
     display: flex;
     justify-content: center;
@@ -565,19 +620,7 @@ apply styles only when focused by keyboard but NOT THE MOUSE
     background-color: var(--section-bg-primary-2-clr);
 }
 
-/* || ADAPTIVITY */
-
-/* tablets */
-@media (max-width: 1050px) {
-
-    /* hero */
-    .hero__title {
-        font-size: 4.4rem;
-    }
-
-    .hero__title .accent {
-        font-size: inherit;
-    }
+@media (max-width: 1400px) {
 
     /* build-your-base */
     #build-your-base .card__title {
@@ -586,125 +629,6 @@ apply styles only when focused by keyboard but NOT THE MOUSE
 
     #build-your-base .card__text {
         font-size: 1.5rem;
-    }
-
-    /* combos */
-    #combos .selector {
-        justify-content: left;
-    }
-}
-
-/* phones */
-@media (max-width: 700px) {
-    :root {
-        font-size: 20px;
-    }
-
-    body {
-        /* for sticky navbar */
-        position: relative;
-    }
-
-    .phone-navbar {
-        z-index: 9999;
-        width: 100vw;
-        display: block;
-        position: sticky;
-        top: 0;
-        padding: 10px;
-        background-color: var(--secondary-clr);
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .section {
-        padding: 40px 15px;
-    }
-
-    /* || buttons */
-    .order-button {
-        text-wrap-mode: nowrap;
-    }
-
-    /* || hero */
-    #hero {
-        background-position: center center;
-        width: 100vw;
-    }
-
-    .hero__content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .logo {
-        display: none;
-    }
-
-    .hero__content-block {
-        position: initial;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .hero__title {
-        background-color: white;
-        text-align: center;
-        font-size: 3rem;
-        padding: 20px;
-    }
-
-    .hero__title .accent {
-        background-color: transparent;
-        color: inherit;
-        font-size: inherit;
-    }
-
-    /* || navigation */
-    .sidebar {
-        display: none;
-    }
-
-    /* || build-your-base */
-    #build-your-base .section__cards {
-        flex-wrap: nowrap;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* || products */
-    #products {
-        background-image: none;
-        background-color: var(--section-bg-primary-2-clr);
-    }
-
-    #products .section__cards {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .product__card {
-        padding: 20px;
-        flex-direction: column;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .product__image {
-        max-width: 50vw;
-    }
-
-    .product__content {
-        padding: 0;
-        gap: 10px;
     }
 
     /* || giftsets */
@@ -722,8 +646,16 @@ apply styles only when focused by keyboard but NOT THE MOUSE
         flex-direction: row;
     }
 
-    #giftsets .selector__item {
-        aspect-ratio: 1/1;
+    #giftsets .selector__item,
+    #giftsets .selector__item--active {
+        height: 120px;
+        max-width: none;
+        flex: 1;
+    }
+
+    #giftsets .selector__item:hover,
+    #giftsets .selector__item--active:hover {
+        cursor: pointer;
     }
 
     .giftset {
@@ -748,14 +680,8 @@ apply styles only when focused by keyboard but NOT THE MOUSE
         height: var(--size);
     }
 
-    /* || combos */
-    #combos {
-        background-image: none;
-    }
-
+    /* combos */
     #combos .selector {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+        justify-content: left;
     }
 }

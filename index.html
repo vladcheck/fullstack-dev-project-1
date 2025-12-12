@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <link rel="icon" href="./assets/icons/favicon.ico" type="image/x-icon" >
-    <link rel="stylesheet" href="./assets/styles/reset.css" >
-    <link rel="stylesheet" href="./assets/styles/font-faces.css" >
-    <link rel="stylesheet" href="./assets/styles/style.css" >
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/icons/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/font-faces.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="./styles/mobile.css"
+      media="screen and (max-width: 700px)"
+    />
+    <script src="./scripts/menu.js" defer></script>
+        <script src="./scripts/scrollToTop.js" defer></script>
     <title>REVO - Ваш пакет, Ваш кофе</title>
   </head>
-
   <body>
-    <nav class="phone-navbar">
-      <button class="menu-button button">
-        <img src="./assets/icons/menu-burger-white-48px.svg" alt="menu" class="menu-button__icon button__icon">
-      </button>
-    </nav>
+    <button class="sidebar__toggle-button button" id="phoneMenuToggleBtn" aria-expanded="false">
+      <img
+        src="./assets/icons/menu-burger-white-48px.svg"
+        alt="menu"
+        class="button__icon"
+      />
+    </button>
     <main class="main">
       <section class="section" id="hero">
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar">
           <div class="sidebar__content">
             <header class="header">
               <button class="cart-button button">
@@ -26,10 +34,10 @@
                   class="button__icon"
                   src="./assets/icons/shopping-cart-white-64.png"
                   alt="your cart"
-                >
+                />
               </button>
             </header>
-            <nav class="nav">
+            <nav class="nav ">
               <ul class="nav__list">
                 <li class="nav__item">
                   <a href="#hero" class="nav__link">REVO</a>
@@ -56,7 +64,7 @@
           </div>
         </aside>
         <div class="hero__content">
-          <img src="./assets/icons/LOGO.png" alt="logo" class="logo" >
+          <img src="./assets/icons/LOGO.png" alt="logo" class="logo" />
           <div class="hero__content-block">
             <h1 class="hero__title">
               ВАШ
@@ -72,7 +80,7 @@
         </header>
         <div class="section__cards">
           <div class="card">
-            <img src="./assets/icons/kiosk.png" alt="i1" class="card__image" >
+            <img src="./assets/icons/kiosk.png" alt="i1" class="card__image" />
             <h3 class="card__title">Пример</h3>
             <p class="card__text">
               Вот вам яркий пример современных тенденций — глубокий уровень
@@ -80,7 +88,7 @@
             </p>
           </div>
           <div class="card">
-            <img src="./assets/icons/cafe.png" alt="i2" class="card__image" >
+            <img src="./assets/icons/cafe.png" alt="i2" class="card__image" />
             <h3 class="card__title">Ответ</h3>
             <p class="card__text">
               Являясь всего лишь частью общей картины, интерактивные прототипы
@@ -88,7 +96,11 @@
             </p>
           </div>
           <div class="card">
-            <img src="./assets/icons/coffee-machine.png" alt="i3" class="card__image" >
+            <img
+              src="./assets/icons/coffee-machine.png"
+              alt="i3"
+              class="card__image"
+            />
             <h3 class="card__title">Бесконечность</h3>
             <p class="card__text">
               Прежде всего, социально-экономическое развитие предоставляет
@@ -96,7 +108,11 @@
             </p>
           </div>
           <div class="card">
-            <img src="./assets/icons/coffee-pockets.png" alt="i4" class="card__image" >
+            <img
+              src="./assets/icons/coffee-pockets.png"
+              alt="i4"
+              class="card__image"
+            />
             <h3 class="card__title">Рыбка</h3>
             <p class="card__text">
               Господа, экономическая повестка сегодняшнего дня однозначно
@@ -107,7 +123,7 @@
       </section>
       <section class="section" id="products">
         <header class="section__header">
-          <h2 class="section__title">ВЫБЕРИТЕ<br>ЛЮБИМЫЙ КОФЕ</h2>
+          <h2 class="section__title">ВЫБЕРИТЕ<br />ЛЮБИМЫЙ КОФЕ</h2>
         </header>
         <div class="section__cards">
           <article class="product__card">
@@ -115,7 +131,7 @@
               class="product__image"
               src="./assets/img/product_1.png"
               alt="coffee beans in a bag"
-            >
+            />
             <div class="product__content">
               <span class="product__price price">98.99</span>
               <h3 class="product__title">REVO Morning</h3>
@@ -135,7 +151,7 @@
               class="product__image"
               src="./assets/img/product_2.png"
               alt="coffee beans in a bag"
-            >
+            />
             <div class="product__content">
               <span class="product__price price">84.99</span>
               <h3 class="product__title">REVO Everyday</h3>
@@ -155,7 +171,7 @@
               class="product__image"
               src="./assets/img/product_3.png"
               alt="coffee beans in a bag"
-            >
+            />
             <div class="product__content">
               <span class="product__price price">138.99</span>
               <h3 class="product__title">REVO Origin</h3>
@@ -174,7 +190,7 @@
               class="product__image"
               src="./assets/img/product_4.png"
               alt="coffee beans in a bag"
-            >
+            />
             <div class="product__content">
               <span class="product__price price">74.99</span>
               <h3 class="product__title">REVO Grounded</h3>
@@ -201,7 +217,7 @@
               class="giftset__image"
               src="./assets/img/giftset_1.png"
               alt="a giftset of one coffee cup with a lid and one holiday coffee bag"
-            >
+            />
             <div class="giftset__content">
               <h3 class="giftset__title">REVO Giftset 1</h3>
               <p class="giftset__description">
@@ -217,13 +233,13 @@
                       src="./assets/icons/coffee-beans-grey.png"
                       alt="coffee beans"
                       class="property__icon"
-                    >
+                    />
                     <div class="property__column">
                       <h4 class="property__title">Зерна</h4>
                       <p class="property__value">Arabica Robusta</p>
                     </div>
-                </div>
-                <button class="order-button button">В корзину!</button>
+                  </div>
+                  <button class="order-button button">В корзину!</button>
                 </div>
                 <div class="giftset__column">
                   <div class="properties__item property">
@@ -231,7 +247,7 @@
                       src="./assets/icons/mountain-grey.png"
                       alt="coffee beans"
                       class="property__icon"
-                    >
+                    />
                     <div class="property__column">
                       <h4 class="property__title">Высота высадки</h4>
                       <p class="property__value">
@@ -241,8 +257,8 @@
                         <span class="unit">м</span>
                       </p>
                     </div>
-                </div>
-                <button class="learn-more-button button">Подробнее</button>
+                  </div>
+                  <button class="learn-more-button button">Подробнее</button>
                 </div>
               </div>
             </div>
@@ -264,7 +280,7 @@
               class="combo__image"
               src="./assets/img/combo_1.png"
               alt="coffee beans in a bag, a cup of coffee in front of it, closed with a lid"
-            >
+            />
             <div class="price-container">
               <span class="combo__price price">146.99</span>
               <span class="combo__price--old price--old">164.99</span>
@@ -285,7 +301,7 @@
               class="combo__image"
               src="./assets/img/combo_2.png"
               alt="coffee beans in a bag, a cup of coffee in front of it, closed with a lid"
-            >
+            />
             <div class="price-container">
               <span class="combo__price price">155.99</span>
               <span class="combo__price--old price--old">164.99</span>
@@ -305,7 +321,7 @@
               class="combo__image"
               src="./assets/img/combo_3.png"
               alt="coffee beans in a bag, a cup of coffee in front of it, closed with a lid"
-            >
+            />
             <div class="price-container">
               <span class="combo__price price">274.99</span>
               <span class="combo__price--old price--old">319.99</span>
@@ -326,5 +342,8 @@
     <footer class="footer" id="footer">
       <span class="copyright">(C) Revo Coffee Viet Nam - 2025</span>
     </footer>
+    <!-- Кнопка "Наверх" -->
+  <button class="scroll-top button link-button" id="scrollTop" aria-label="Наверх"> 
+  </button>
   </body>
 </html>
